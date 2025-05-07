@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ODRL Policy",
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "type": 
+        {
+          "type": "string",
+          "enum": ["Set", "Offer", "Agreement"],
+          "description": "ODRL policy type: Set, Offer, or Agreement"
+        },
+      "uid": { "type": "string" },
+      "profile": { "type": "string" },
+      "context": {
+        "type": ["string", "array", "object"],
+        "default": "http://www.w3.org/ns/odrl.jsonld"
+      },
+      "target": { "type": "string" },
+      "assigner": { "type": ["string", "object"] },
+      "assignee": { "type": ["string", "object"] },
+      "permission": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "action": { "type": ["string", "object"] },
+            "target": { "type": ["string", "object"] },
+            "assigner": { "type": ["string", "object"] },
+            "assignee": { "type": ["string", "object"] },
+            "constraint": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "leftOperand": { "type": "string" },
+                  "operator": { "type": "string" },
+                  "rightOperand": { "type": ["string", "number", "object"] },
+                  "unit": { "type": "string" }
+                },
+                "required": ["leftOperand", "operator", "rightOperand"]
+              }
+            },
+            "duty": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "action": { "type": ["string", "object"] },
+                  "constraint": {
+                    "type": "array",
+                    "items": { "$ref": "#/properties/permission/items/properties/constraint/items" }
+                  },
+                  "target": { "type": "string" },
+                  "assignee": { "type": ["string", "object"] }
+                },
+                "required": ["action"]
+              }
+            }
+          },
+          "required": ["action", "target"]
+        }
+      },
+      "prohibition": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "action": { "type": ["string", "object"] },
+            "target": { "type": ["string", "object"] },
+            "assigner": { "type": ["string", "object"] },
+            "assignee": { "type": ["string", "object"] },
+            "constraint": {
+              "type": "array",
+              "items": { "$ref": "#/properties/permission/items/properties/constraint/items" }
+            }
+          },
+          "required": ["action", "target"]
+        }
+      },
+      "duty": {
+        "type": "array",
+        "items": { "$ref": "#/properties/permission/items/properties/duty/items" }
+      },
+      "metadata": {
+        "type": "object",
+        "description": "Any additional metadata such as title, issued date, description, etc."
+      }
+    },
+    "required": ["type"]
+  }

@@ -1,121 +1,1034 @@
 [
     {
-      "id": "sample-001",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:12345",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record123",
-            "action": "read",
-            "assignee": "http://example.com/agents/userA"
-          }
-        ]
+        "id": "healthcare-example-004",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "dpv": "https://w3id.org/dpv#",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000004",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "dpv:ResearchAndDevelopment"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for any purpose that is a subclass of Research and Development, interpreted as no restrictions on use."
       },
-      "text": "User A is allowed to read healthcare record 123."
-    },
-    {
-      "id": "sample-002",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:67890",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record456",
-            "action": "write",
-            "assignee": "http://example.com/agents/userB"
-          }
-        ]
+      {
+        "id": "healthcare-example-006",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000006",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:HMB"
+                    },
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "duodrl:isNotA",
+                      "rightOperand": "duodrl:POA"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for health, medical, or biomedical purposes (HMB), except for uses that relate to the study of population origins or ancestry (POA)."
       },
-      "text": "User B is allowed to write to healthcare record 456."
-    },
-    {
-      "id": "sample-003",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:11223",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record789",
-            "action": "delete",
-            "assignee": "http://example.com/agents/userC"
-          }
-        ]
+      {
+        "id": "healthcare-example-007",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000007",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:DS"
+                    },
+                    {
+                      "leftOperand": "duodrl:Disease",
+                      "operator": "odrl:isA",
+                      "rightOperand": "obo:MONDO_0000001"
+                    },
+                    {
+                      "leftOperand": "duodrl:Disease",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:TemplateDisease"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset only for research related to a specific disease, represented by a MONDO disease identifier or a placeholder disease instance."
+      },      
+      {
+        "id": "healthcare-example-011",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000011",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:POA"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "duodrl:isNotA",
+                  "rightOperand": "duodrl:POA"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits use of the dataset only for research related to population origins or ancestry, and prohibits its use for any other purposes."
       },
-      "text": "User C is allowed to delete healthcare record 789."
-    },
-    {
-      "id": "sample-004",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:44556",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record101112",
-            "action": "update",
-            "assignee": "http://example.com/agents/userD"
-          }
-        ]
+      {
+        "id": "healthcare-example-012",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000012",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:TemplateResearch"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "duodrl:isNotA",
+                  "rightOperand": "duodrl:TemplateResearch"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits use of the dataset only for a specific research type defined by TemplateResearch, and prohibits use for any other research purposes."
       },
-      "text": "User D is allowed to update healthcare record 101112."
-    },
-    {
-      "id": "sample-005",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:13141",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record151617",
-            "action": "read",
-            "assignee": "http://example.com/agents/userE"
-          }
-        ]
+      {
+        "id": "healthcare-example-015",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000015",
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:MDS"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy prohibits the use of the dataset for General Methods Research (MDS)."
       },
-      "text": "User E is allowed to read healthcare record 151617."
-    },
-    {
-      "id": "sample-006",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:18191",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record202122",
-            "action": "write",
-            "assignee": "http://example.com/agents/userF"
-          }
-        ]
+      {
+        "id": "healthcare-example-016",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000016",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "refinement": {
+                  "odrl:or": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:GS"
+                    },
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:GSG"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "prohibition": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:GS"
+                    },
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "duodrl:isNotA",
+                      "rightOperand": "duodrl:GSG"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for genetic studies involving genotype research (GS or GSG), and prohibits use if the study is genetic but does not include genotype research."
       },
-      "text": "User F is allowed to write to healthcare record 202122."
-    },
-    {
-      "id": "sample-007",
-      "domain": "healthcare",
-      "odrl": {
-        "@context": "http://www.w3.org/ns/odrl.jsonld",
-        "uid": "urn:uuid:23242",
-        "type": "Set",
-        "permission": [
-          {
-            "target": "http://example.com/data/record252627",
-            "action": "delete",
-            "assignee": "http://example.com/agents/userG"
-          }
-        ]
+      {
+        "id": "healthcare-example-018",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000018",
+          "permission": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:NonProfitOrganisation"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:NCU"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:ForProfitOrganisation"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "duodrl:isA",
+                  "rightOperand": "duodrl:NCU"
+                }
+              ]
+            },
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:NonProfitOrganisation"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "duodrl:isNotA",
+                  "rightOperand": "duodrl:NCU"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits use of the dataset by non-profit organizations for non-commercial purposes, while prohibiting commercial use by any party and non-commercial use by for-profit organizations."
       },
-      "text": "User G is allowed to delete healthcare record 252627."
-    }
-  ]
+      {
+        "id": "healthcare-example-019",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000019",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "duty": [
+                {
+                  "action": "odrl:distribute",
+                  "output": "duodrl:ResultsOfStudies",
+                  "odrl:attributedParty": "duodrl:ScientificCommunity"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset with the obligation to distribute the results of the studies, ideally to the wider scientific community."
+      },
+      {
+        "id": "healthcare-example-020",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000020",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "duty": [
+                {
+                  "action": "duodrl:CollaborateWithStudyPI",
+                  "constraint": [
+                    {
+                      "leftOperand": "odrl:event",
+                      "operator": "odrl:lt",
+                      "rightOperand": "odrl:policyUsage"
+                    }
+                  ],
+                  "odrl:attributedParty": "duodrl:TemplatePI"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits data use only if collaboration with the primary investigator occurs before accessing the dataset."
+      },
+      {
+        "id": "healthcare-example-021",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000021",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "duty": [
+                {
+                  "action": "duodrl:ProvideEthicalApproval"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits the use of the dataset with the obligation that the requestor provides documentation of local IRB/ERB ethical approval."
+      },
+      {
+        "id": "healthcare-example-022",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000022",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:spatial",
+                  "operator": "odrl:lteq",
+                  "rightOperand": "duodrl:TemplateLocation"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:spatial",
+                  "operator": "odrl:gt",
+                  "rightOperand": "duodrl:TemplateLocation"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits the use of the dataset within a specified geographic location and prohibits use outside that region."
+      },
+      {
+        "id": "healthcare-example-024",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000024",
+          "prohibition": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:distribute",
+              "output": "duodrl:ResultsOfStudies",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:dateTime",
+                  "operator": "odrl:lt",
+                  "rightOperand": "duodrl:TemplateStudyResultsPublicationDate"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy prohibits the publication of study results derived from the dataset before a specified date, representing a publication moratorium."
+      },
+      {
+        "id": "healthcare-example-025",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000025",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:dateTime",
+                  "operator": "odrl:lteq",
+                  "rightOperand": "duodrl:TemplateTimeLimit"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits the use of the dataset until a specific time limit, interpreted as a restriction on use based on a defined number of months."
+      },
+      {
+        "id": "healthcare-example-026",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000026",
+          "permission": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:TemplateUser"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use"
+            }
+          ]
+        },
+        "text": "This Set policy allows only the specified approved users (TemplateUser) to use the dataset, reflecting a user-specific restriction."
+      },
+      {
+        "id": "healthcare-example-027",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000027",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "duodrl:Project",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:TemplateProject"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "duodrl:Project",
+                  "operator": "duodrl:isNotA",
+                  "rightOperand": "duodrl:TemplateProject"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset only within an approved project (TemplateProject) and prohibits its use in any other project."
+      },
+      {
+        "id": "healthcare-example-028",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000028",
+          "permission": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:TemplateInstitution"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use"
+            }
+          ]
+        },
+        "text": "This Set policy permits the use of the dataset only by an approved institution (TemplateInstitution), as specified in the user-specific restriction DUO_0000028."
+      },                  
+      {
+        "id": "healthcare-example-029",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000029",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "duty": [
+                {
+                  "action": "duodrl:ReturnDerivedOrEnrichedData"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy permits the use of the dataset with the obligation to return any derived or enriched data back to the source database or resource, in accordance with DUO_0000029."
+      },
+      {
+        "id": "healthcare-example-031",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000031",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:MDS"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for investigations specifically aimed at developing methods, algorithms, software, or analytical tools, classified under the MDS category (Method Development Studies)."
+      },
+      {
+        "id": "healthcare-example-032",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000032",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "odrl:value": "odrl:use",
+                "odrl:refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:PopulationGroupResearch"
+                    },
+                    {
+                      "leftOperand": "duodrl:PopulationGroup",
+                      "operator": "odrl:eq",
+                      "rightOperand": "duodrl:TemplatePopulationGroup"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for research focused on a specific population group. It requires that the purpose be categorized as Population Group Research and that the study pertains to the defined group indicated by TemplatePopulationGroup."
+      },
+      {
+        "id": "healthcare-example-033",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000033",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:POA"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for investigations concerning ancestry or population origins, classified under the POA (Population Origins or Ancestry) research purpose."
+      },
+      {
+        "id": "healthcare-example-034",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000034",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "odrl:refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:AgeCategoryResearch"
+                    },
+                    {
+                      "leftOperand": "duodrl:Age",
+                      "operator": "odrl:eq",
+                      "rightOperand": "duodrl:TemplateAgeCategory"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for investigations concerning specific age categories, classified under AgeCategoryResearch with a specified age group."
+      },
+      {
+        "id": "healthcare-example-035",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000035",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "odrl:refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:GenderCategoryResearch"
+                    },
+                    {
+                      "leftOperand": "duodrl:Gender",
+                      "operator": "odrl:eq",
+                      "rightOperand": "duodrl:TemplateGender"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for investigations concerning specific gender categories, classified under GenderCategoryResearch and a specified gender."
+      },
+      {
+        "id": "healthcare-example-036",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000036",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:ResearchControl"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for investigations involving its use as reference or control material, defined under the purpose ResearchControl."
+      },
+      {
+        "id": "healthcare-example-037",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000037",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:HMB"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for health, medical, or biomedical research purposes (HMB)."
+      },
+      {
+        "id": "healthcare-example-038",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000038",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:GS"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset for biomedical research concerning genetics, such as the study of genes, genetic variations, and heredity (GS)."
+      },
+      {
+        "id": "healthcare-example-039",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000039",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:DrugDevelopment"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for biomedical research concerning drug development (DrugDevelopment)."
+      },
+      {
+        "id": "healthcare-example-040",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000040",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": {
+                "rdf:value": "odrl:use",
+                "odrl:refinement": {
+                  "odrl:and": [
+                    {
+                      "leftOperand": "odrl:purpose",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:DS"
+                    },
+                    {
+                      "leftOperand": "duodrl:Disease",
+                      "operator": "odrl:isA",
+                      "rightOperand": "obo:MONDO_0000001"
+                    },
+                    {
+                      "leftOperand": "duodrl:Disease",
+                      "operator": "odrl:isA",
+                      "rightOperand": "duodrl:TemplateDisease"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for biomedical research concerning specific diseases. The dataset must relate to a disease classified under MONDO and match a specific disease template."
+      },
+      {
+        "id": "healthcare-example-042",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000042",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:GRU"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for any general research purpose, interpreted as an instance of GRU (General Research Use)."
+      },
+      {
+        "id": "healthcare-example-043",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000043",
+          "permission": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:CC"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for purposes related to clinical care, as defined by the Clinical Care (CC) usage category."
+      },
+      {
+        "id": "healthcare-example-044",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000044",
+          "prohibition": [
+            {
+              "action": "odrl:use",
+              "target": "duodrl:TemplateDataset",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:POA"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy prohibits the use of the dataset for purposes related to population origins or ancestry research (POA)."
+      },
+      {
+        "id": "healthcare-example-045",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#",
+            "obo": "http://purl.obolibrary.org/obo/"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000045",
+          "permission": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:NonProfitOrganisation"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use"
+            }
+          ],
+          "prohibition": [
+            {
+              "assignee": {
+                "@type": "odrl:Party",
+                "obo:DUO_0000010": "duodrl:ForProfitOrganisation"
+              },
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use"
+            }
+          ]
+        },
+        "text": "This Set policy allows use of the dataset only by not-for-profit organizations and prohibits its use by for-profit organizations."
+      },
+      {
+        "id": "healthcare-example-046",
+        "odrl": {
+          "@context": {
+            "odrl": "http://www.w3.org/ns/odrl.jsonld",
+            "duodrl": "https://w3id.org/duodrl#"
+          },
+          "@type": "odrl:Set",
+          "uid": "duodrl:DUO_0000046",
+          "permission": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "odrl:isA",
+                  "rightOperand": "duodrl:NCU"
+                }
+              ]
+            }
+          ],
+          "prohibition": [
+            {
+              "target": "duodrl:TemplateDataset",
+              "action": "odrl:use",
+              "constraint": [
+                {
+                  "leftOperand": "odrl:purpose",
+                  "operator": "duodrl:isNotA",
+                  "rightOperand": "duodrl:NCU"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This Set policy allows the use of the dataset for non-commercial purposes only and prohibits its use for commercial purposes."
+      }                                                                                             
+]
