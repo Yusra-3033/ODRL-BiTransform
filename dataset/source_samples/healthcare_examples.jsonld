@@ -1,0 +1,121 @@
+[
+    {
+      "id": "sample-001",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:12345",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record123",
+            "action": "read",
+            "assignee": "http://example.com/agents/userA"
+          }
+        ]
+      },
+      "text": "User A is allowed to read healthcare record 123."
+    },
+    {
+      "id": "sample-002",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:67890",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record456",
+            "action": "write",
+            "assignee": "http://example.com/agents/userB"
+          }
+        ]
+      },
+      "text": "User B is allowed to write to healthcare record 456."
+    },
+    {
+      "id": "sample-003",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:11223",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record789",
+            "action": "delete",
+            "assignee": "http://example.com/agents/userC"
+          }
+        ]
+      },
+      "text": "User C is allowed to delete healthcare record 789."
+    },
+    {
+      "id": "sample-004",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:44556",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record101112",
+            "action": "update",
+            "assignee": "http://example.com/agents/userD"
+          }
+        ]
+      },
+      "text": "User D is allowed to update healthcare record 101112."
+    },
+    {
+      "id": "sample-005",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:13141",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record151617",
+            "action": "read",
+            "assignee": "http://example.com/agents/userE"
+          }
+        ]
+      },
+      "text": "User E is allowed to read healthcare record 151617."
+    },
+    {
+      "id": "sample-006",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:18191",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record202122",
+            "action": "write",
+            "assignee": "http://example.com/agents/userF"
+          }
+        ]
+      },
+      "text": "User F is allowed to write to healthcare record 202122."
+    },
+    {
+      "id": "sample-007",
+      "domain": "healthcare",
+      "odrl": {
+        "@context": "http://www.w3.org/ns/odrl.jsonld",
+        "uid": "urn:uuid:23242",
+        "type": "Set",
+        "permission": [
+          {
+            "target": "http://example.com/data/record252627",
+            "action": "delete",
+            "assignee": "http://example.com/agents/userG"
+          }
+        ]
+      },
+      "text": "User G is allowed to delete healthcare record 252627."
+    }
+  ]

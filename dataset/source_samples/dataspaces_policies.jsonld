@@ -1,0 +1,420 @@
+[
+    {
+        "id": "policy-access-count",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/access-count",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource1",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "count",
+                  "operator": "lteq",
+                  "rightOperand": 5
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy allows the consumer to use the resource up to 5 times."
+      },
+      {
+        "id": "policy-regional-access",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/regional-access",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource2",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "spatial",
+                  "operator": "eq",
+                  "rightOperand": "DE"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy restricts the use of the resource to consumers located in Germany (DE)."
+      },
+      {
+        "id": "policy-time-restriction",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/time-restriction",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource3",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "dateTime",
+                  "operator": "lteq",
+                  "rightOperand": "2025-12-31T23:59:59Z"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy permits the consumer to use the resource until December 31, 2025."
+      },
+      {
+        "id": "policy-purpose-limitation",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/purpose-limitation",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource4",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "purpose",
+                  "operator": "eq",
+                  "rightOperand": "research"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy allows the consumer to use the resource solely for research purposes."
+      },
+      {
+        "id": "policy-duty-delete",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/duty-delete",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource5",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "delete",
+                  "constraint": [
+                    {
+                      "leftOperand": "elapsedTime",
+                      "operator": "eq",
+                      "rightOperand": "P30D"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy permits the consumer to use the resource with the obligation to delete it within 30 days."
+      },
+      {
+        "id": "policy-anonymization-requirement",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/anonymization-requirement",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource6",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "anonymize"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy permits the consumer to use the data asset with the obligation to anonymize it before any processing."
+      },
+      {
+        "id": "policy-aggregation-before-processing",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/aggregation-before-processing",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource7",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "aggregate"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy allows the consumer to use the data asset only after aggregating it, ensuring that individual data points are not processed in isolation."
+      },                  
+      {
+        "id": "policy-delegation-of-permission",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/delegation-of-permission",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource9",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "attachPolicy",
+                  "constraint": [
+                    {
+                      "leftOperand": "purpose",
+                      "operator": "eq",
+                      "rightOperand": "research"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy allows the consumer to use the data asset and grants them the permission to delegate usage rights to a third party under specified conditions."
+      },
+      {
+        "id": "policy-up-to-dateness",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/up-to-dateness",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource10",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "update",
+                  "constraint": [
+                    {
+                      "leftOperand": "elapsedTime",
+                      "operator": "lteq",
+                      "rightOperand": "P7D"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy permits the consumer to use the data asset with the obligation to ensure that the data is updated at a specified frequency."
+      },
+      {
+        "id": "policy-temporal-access",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/temporal-access",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource12",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "dateTime",
+                  "operator": "gteq",
+                  "rightOperand": "2025-01-01T00:00:00Z"
+                },
+                {
+                  "leftOperand": "dateTime",
+                  "operator": "lteq",
+                  "rightOperand": "2025-12-31T23:59:59Z"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy allows the consumer to access the data asset only within the year 2025."
+      }, 
+      {
+        "id": "policy-spatial-access",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Set",
+          "uid": "http://example.com/policy/spatial-access",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource13",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "spatial",
+                  "operator": "eq",
+                  "rightOperand": "DE"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy restricts the consumer's access to the data asset to within Germany (DE)."
+      },                                         
+      {
+        "id": "policy-specific-consumer",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/specific-consumer",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource15",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/specific-consumer",
+              "action": "use"
+            }
+          ]
+        },
+        "text": "This policy permits only a specific consumer to access the resource."
+      },
+      {
+        "id": "policy-activity-logging",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/activity-logging",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource16",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "log"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy requires the consumer to log all data usage activities."
+      },
+      {
+        "id": "policy-data-aggregation",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/data-aggregation",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource17",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "aggregate"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy mandates that the consumer must aggregate data before processing."
+      },
+      {
+        "id": "policy-data-anonymization",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/data-anonymization",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource18",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "anonymize"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy obliges the consumer to anonymize data prior to usage."
+      },
+      {
+        "id": "policy-bandwidth-limitation",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/bandwidth-limitation",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource19",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "constraint": [
+                {
+                  "leftOperand": "bandwidth",
+                  "operator": "lteq",
+                  "rightOperand": 10,
+                  "unit": "Mbps"
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy restricts the consumer's data usage to a maximum bandwidth of 10 Mbps."
+      },
+      {
+        "id": "policy-billing-requirement",
+        "odrl": {
+          "@context": "http://www.w3.org/ns/odrl.jsonld",
+          "@type": "Agreement",
+          "uid": "http://example.com/policy/billing-requirement",
+          "permission": [
+            {
+              "target": "http://example.com/data/resource20",
+              "assigner": "http://example.com/org/provider",
+              "assignee": "http://example.com/org/consumer",
+              "action": "use",
+              "duty": [
+                {
+                  "action": "compensate",
+                  "constraint": [
+                    {
+                      "leftOperand": "payAmount",
+                      "operator": "eq",
+                      "rightOperand": 100,
+                      "unit": "EUR"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "text": "This policy requires the consumer to pay a fee of 100 euros for data usage."
+      }      
+]
