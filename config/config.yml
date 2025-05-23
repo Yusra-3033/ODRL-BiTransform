@@ -1,0 +1,151 @@
+## config/config.yml
+## ------------------------------------------------------------------------------
+## ODRL Policy Generation Configuration
+##
+## This configuration file defines the parameters and default values used in
+## generating synthetic ODRL 2.2 policies. It includes:
+## - Number of policies to generate
+## - Default vocabularies (actions, constraints, operators)
+## - Example URIs for parties and assets
+## - Conflict resolution strategies
+## - Output destination
+##
+## This file supports consistent, repeatable, and configurable policy generation.
+## ------------------------------------------------------------------------------
+
+num_policies: 50  # Total number of synthetic ODRL policies to generate
+
+defaults:
+  policy_types:    # Types of ODRL policies to randomly select from
+    - Set
+    - Offer
+    - Agreement
+    - Policy
+
+  actions:         # List of potential actions that can appear in permissions/prohibitions
+    - use
+    - play
+    - display
+    - distribute
+    - modify
+    - delete
+    - archive
+    - index
+    - read
+    - write
+    - print
+    - copy
+    - move
+    - install
+    - uninstall
+    - execute
+    - present
+    - transfer
+    - annotate
+    - aggregate
+    - anonymize
+    - attribute
+    - compensate
+    - derive
+    - digitize
+    - extract
+    - give
+    - include
+    - inform
+    - lease
+    - lend
+    - pay
+    - preview
+    - reviewPolicy
+    - secondaryUse
+    - sell
+    - share
+    - shareAlike
+    - textToSpeech
+    - translate
+    - watermark
+
+  constraint_operands:  # List of operands that can be used in constraints
+    - absolutePosition
+    - absoluteSpatialPosition
+    - absoluteTemporalPosition
+    - count
+    - dateTime
+    - delayPeriod
+    - deliveryChannel
+    - elapsedTime
+    - event
+    - fileFormat
+    - industry
+    - language
+    - media
+    - metering
+    - payAmount
+    - percentage
+    - product
+    - purpose
+    - recipient
+    - relativePosition
+    - relativeSpatialPosition
+    - relativeTemporalPosition
+    - resolution
+    - spatial
+    - systemDevice
+    - timeInterval
+    - unitOfCount
+    - version
+    - virtualLocation
+
+  operators:       # Logical operators used in constraints
+    - eq
+    - gt
+    - gteq
+    - lt
+    - lteq
+    - ne
+    - isA
+    - hasPart
+    - isPartOf
+    - isAllOf
+    - isAnyOf
+    - isNoneOf
+
+  example_party_uris:  # Sample URIs representing users or organizations 
+    - "http://example.com/person:alice"
+    - "http://example.com/person:bob"
+    - "http://example.com/person:carol"
+    - "http://example.com/org:sony"
+    - "http://example.com/org:abc"
+    - "http://example.com/org:xyz"
+    - "http://example.com/team:dev"
+    - "http://example.com/team:marketing"
+    - "http://example.com/party:0001"
+    - "http://example.com/party:org:abc"
+    - "http://example.com/party:person:billie"
+    - "http://example.com/party:org:xyz"
+    - "http://example.com/party:org:123"
+    - "http://example.com/party:org:456"
+
+  example_asset_uris:  # Sample URIs representing assets (photos, videos, documents)
+    - "http://example.com/asset:photo123"
+    - "http://example.com/asset:movie456"
+    - "http://example.com/asset:document789"
+    - "http://example.com/music:track001"
+    - "http://example.com/data:dataset01"
+    - "http://example.com/video:clip123"
+    - "http://example.com/image:img456"
+    - "http://example.com/text:article789"
+    - "http://example.com/asset:3333"
+    - "http://example.com/asset:9898.movie"
+    - "http://example.com/asset:9999.movie"
+    - "http://example.com/asset:8888.photo"
+    - "http://example.com/asset:7777.document"
+    - "http://example.com/asset:6666.music"
+    - "http://example.com/asset:5555.dataset"
+
+conflict_strategies:  # Strategies for resolving conflicts (permission vs prohibition)
+    - perm
+    - prohibit
+    - invalid
+
+output_path: "outputs/generated_policies.json"  # Path to write the generated policies

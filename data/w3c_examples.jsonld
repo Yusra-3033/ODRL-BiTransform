@@ -104,23 +104,24 @@
             {
               "target": "http://example.com/looking-glass.ebook",
               "assigner": {
-                "@type": ["Party", "vcard:Organization"],
+                "@type": ["odrl:Party", "vcard:Organization"],
                 "uid": "http://example.com/org/sony-books",
                 "vcard:fn": "Sony Books LCC",
                 "vcard:hasEmail": "sony-contact@example.com"
               },
               "assignee": {
-                "@type": ["PartyCollection", "vcard:Group"],
+                "@type": ["odrl:PartyCollection", "vcard:Group"],
                 "uid": "http://example.com/team/A",
                 "vcard:fn": "Team A",
-                "vcard:hasEmail": "teamA@example.com"
+                "vcard:hasEmail": "teamA@example.com",
+                "odrl:source": "http://example.com/groups/team-a"
               },
               "action": "use"
             }
           ]
         },
         "text": "This Agreement policy grants the permission to use the asset located at http://example.com/looking-glass.ebook, assigned by http://example.com/org/sony-books to all members of the party collection http://example.com/team/A."
-      },
+      },      
       {
         "id": "w3c-example-007",
         "domain": "general",
@@ -722,7 +723,12 @@
           "dc:issued": "2017-01-01T12:00",
           "dc:coverage": { "@id": "https://www.iso.org/obp/ui/#iso:code:3166:AU-QLD" },
           "dc:replaces": { "@id": "http://example.com/policy:8887" },
-          "permission": [{}]
+          "permission": [
+            {
+              "target": "http://example.com/music/1999.mp3",
+              "action": "play"
+            }
+          ]
         },
         "text": "This Policy policy includes metadata indicating it was created by Billie Enterprises LLC, issued on 2017-01-01, applies to the jurisdiction https://www.iso.org/obp/ui/#iso:code:3166:AU-QLD, and replaces the policy http://example.com/policy:8887."
       },      
@@ -837,4 +843,3 @@
       }
                  
   ]
-  

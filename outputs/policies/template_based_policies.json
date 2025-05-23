@@ -1,0 +1,2355 @@
+[
+  {
+    "id": "79aee68e-9cb0-4e1f-9e97-344c0e88e520",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/1880a861-a80b-4dce-b117-b7a22a5bc3aa",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:document789",
+          "action": "modify",
+          "assigner": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "eq",
+                    "rightOperand": "image/gif"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "eq",
+                    "rightOperand": "video/webm"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:3333",
+          "action": "modify",
+          "assigner": "http://example.com/org:xyz"
+        }
+      ]
+    },
+    "text": "authorizes a party to modify the asset document789 only if exactly one of the following applies: (fileFormat is equal to image/gif; or fileFormat is equal to video/webm). prohibits a party to modify the asset 3333.",
+    "keywords": [
+      "modify"
+    ]
+  },
+  {
+    "id": "f350917b-7e45-4434-9298-7fac3171addc",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/e0d5c2b8-9835-42cd-9adb-bfab2191d216",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:movie456",
+          "action": "pay",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "eq",
+                    "rightOperand": "image/gif"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "relativePosition",
+                    "operator": "isA",
+                    "rightOperand": "http://example.com/value/relativePosition/498e6d66"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "authorizes bob to pay the asset movie456 only if fileFormat is equal to image/gif and relativePosition is a http://example.com/value/relativePosition/498e6d66.",
+    "keywords": [
+      "pay"
+    ]
+  },
+  {
+    "id": "068e5e2b-1c63-4305-bb25-ebb50064a53e",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/cb590695-3c37-4352-ba86-8f26e72b45a3",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:7777.document",
+          "action": "extract",
+          "assigner": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "language",
+                    "operator": "isNoneOf",
+                    "rightOperand": "ja"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "lteq",
+                    "rightOperand": 1340
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to extract the asset 7777.document only if exactly one of the following applies: (language is none of ja; or elapsedTime is less than or equal to 1340).",
+    "keywords": [
+      "extract"
+    ]
+  },
+  {
+    "id": "391c7229-2bd9-43cf-88f4-e633dc0bf3fc",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/6b5c7d05-2245-445c-a065-d2b90962c8f4",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "execute",
+          "assigner": "http://example.com/party:org:abc",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "absolutePosition",
+              "operator": "hasPart",
+              "rightOperand": "http://example.com/value/absolutePosition/725ae29f"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "media",
+              "operator": "eq",
+              "rightOperand": "digital"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits a party to execute the asset 6666.music only if absolutePosition has part http://example.com/value/absolutePosition/725ae29f and media is equal to digital.",
+    "keywords": [
+      "execute"
+    ]
+  },
+  {
+    "id": "8f07e452-c363-494a-b599-b8cd1b4bca01",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/2fc10228-ff23-48da-a464-9e31556f5ffe",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/data:dataset01",
+          "action": "distribute",
+          "assigner": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "absoluteSpatialPosition",
+              "operator": "isA",
+              "rightOperand": "http://www.wikidata.org/entity/Q358"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables a party to distribute the asset dataset01 only if absoluteSpatialPosition is a http://www.wikidata.org/entity/Q358.",
+    "keywords": [
+      "distribute"
+    ]
+  },
+  {
+    "id": "d8654a87-ea80-4eab-acb0-db625dd21d2a",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/75891415-cb5e-4132-bd69-5c291265f6b4",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:9999.movie",
+          "action": "pay",
+          "assigner": "http://example.com/party:org:456",
+          "assignee": "http://example.com/party:org:xyz"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:6666.music",
+          "action": "distribute",
+          "assigner": "http://example.com/party:org:456",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "eq",
+                    "rightOperand": "video/mkv"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "language",
+                    "operator": "isAnyOf",
+                    "rightOperand": "hi"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits xyz to pay the asset 9999.movie. denies xyz to distribute the asset 6666.music only if fileFormat is equal to video/mkv and language is any of hi.",
+    "keywords": [
+      "distribute",
+      "pay"
+    ]
+  },
+  {
+    "id": "620dd42e-8b83-448f-85d0-20005baf67a8",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/04c27bb6-286c-417c-9be8-831e824b3950",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/image:img456",
+          "action": "read",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "spatial",
+              "operator": "isA",
+              "rightOperand": "http://example.com/value/spatial/33ce56fd"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "percentage",
+              "operator": "eq",
+              "rightOperand": 12
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:9999.movie",
+          "action": "present",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "resolution",
+              "operator": "isNoneOf",
+              "rightOperand": "480p"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows xyz to read the asset img456 only if spatial is a http://example.com/value/spatial/33ce56fd and percentage is equal to 12. expects xyz to present the asset 9999.movie only if resolution is none of 480p.",
+    "keywords": [
+      "present",
+      "read"
+    ]
+  },
+  {
+    "id": "18112170-c4ec-431a-8010-ab270cd743eb",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/b6d52bce-ce58-492b-983f-2473bf552cb7",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "execute",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "resolution",
+              "operator": "eq",
+              "rightOperand": "2K"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "relativePosition",
+              "operator": "isPartOf",
+              "rightOperand": "http://example.com/value/relativePosition/adf01f6b"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/text:article789",
+          "action": "print",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "count",
+                    "operator": "lt",
+                    "rightOperand": 502
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isNoneOf",
+                    "rightOperand": "text/html"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/video:clip123",
+          "action": "anonymize",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "recipient",
+              "operator": "isPartOf",
+              "rightOperand": "http://example.com/recipient/org/6a032379"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "absolutePosition",
+              "operator": "isA",
+              "rightOperand": "http://example.com/value/absolutePosition/a9ce411e"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables xyz to execute the asset 9898.movie only if resolution is equal to 2K and relativePosition is part of http://example.com/value/relativePosition/adf01f6b. prohibits xyz to print the asset article789 only if count is less than 502 and fileFormat is none of text/html. expects xyz to anonymize the asset clip123 only if recipient is part of http://example.com/recipient/org/6a032379 and absolutePosition is a http://example.com/value/absolutePosition/a9ce411e.",
+    "keywords": [
+      "anonymize",
+      "execute",
+      "print"
+    ]
+  },
+  {
+    "id": "6842c07e-363a-4477-8e8e-4f2c005aae0d",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/1b541ba0-d563-48bb-ba46-dffd4af71750",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:7777.document",
+          "action": "attribute",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "hasPart",
+                    "rightOperand": "http://www.wikidata.org/entity/Q668"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "language",
+                    "operator": "isNoneOf",
+                    "rightOperand": "fr"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:document789",
+          "action": "copy",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "eq",
+              "rightOperand": "image/gif"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isA",
+              "rightOperand": "image/bmp"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits xyz to attribute the asset 7777.document only if absoluteSpatialPosition has part http://www.wikidata.org/entity/Q668 and language is none of fr. obligates xyz to copy the asset document789 only if fileFormat is equal to image/gif and fileFormat is a image/bmp.",
+    "keywords": [
+      "attribute",
+      "copy"
+    ]
+  },
+  {
+    "id": "5fcf0341-0c97-4f8a-8313-206cfc2a0d7b",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/6702e923-40b1-4c79-93da-46065f66bebb",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:9999.movie",
+          "action": "download",
+          "assigner": "http://example.com/person:alice",
+          "assignee": "http://example.com/party:org:abc",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "unitOfCount",
+              "operator": "gt",
+              "rightOperand": 745
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "relativePosition",
+              "operator": "hasPart",
+              "rightOperand": "http://example.com/value/relativePosition/8435021a"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:3333",
+          "action": "sell",
+          "assigner": "http://example.com/person:alice",
+          "assignee": "http://example.com/party:org:abc",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "eq",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-05-28T12:32:20Z"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "isNoneOf",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-06-14T12:32:20Z"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:document789",
+          "action": "extract",
+          "assigner": "http://example.com/person:alice",
+          "assignee": "http://example.com/party:org:abc"
+        }
+      ]
+    },
+    "text": "authorizes abc to download the asset 9999.movie only if unitOfCount is greater than 745 and relativePosition has part http://example.com/value/relativePosition/8435021a. disallows abc to sell the asset 3333 only if exactly one of the following applies: (timeInterval is equal to 2025-05-23T12:32:20Z/2025-05-28T12:32:20Z; or timeInterval is none of 2025-05-23T12:32:20Z/2025-06-14T12:32:20Z). mandates abc to extract the asset document789.",
+    "keywords": [
+      "download",
+      "extract",
+      "sell"
+    ]
+  },
+  {
+    "id": "d635a941-ff17-4eb9-943d-5963f78d4aff",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/9cd11917-d1bb-437b-8eaf-03edafde4782",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "move",
+          "assigner": "http://example.com/party:org:abc",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isNoneOf",
+              "rightOperand": "video/mp4"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/data:dataset01",
+          "action": "distribute",
+          "assigner": "http://example.com/party:org:abc",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "purpose",
+                    "operator": "eq",
+                    "rightOperand": "research"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "count",
+                    "operator": "gteq",
+                    "rightOperand": 683
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/image:img456",
+          "action": "modify",
+          "assigner": "http://example.com/party:org:abc",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "spatial",
+                    "operator": "isNoneOf",
+                    "rightOperand": "http://example.com/value/spatial/53bbc6af"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "version",
+                    "operator": "isNoneOf",
+                    "rightOperand": "4.4.3"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "grants permission to xyz to move the asset 6666.music only if fileFormat is none of video/mp4. prohibits xyz to distribute the asset dataset01 only if exactly one of the following applies: (purpose is equal to research; or count is greater than or equal to 683). mandates xyz to modify the asset img456 only if at least one of the following applies: (spatial is none of http://example.com/value/spatial/53bbc6af; or version is none of 4.4.3).",
+    "keywords": [
+      "distribute",
+      "modify",
+      "move"
+    ]
+  },
+  {
+    "id": "b3e2a5be-cfaa-4531-8f3a-1e58a4055b0d",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/8cd5982a-1962-49f8-bfc0-2bf065265dc3",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:8888.photo",
+          "action": "share",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "count",
+                    "operator": "gt",
+                    "rightOperand": 362
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "percentage",
+                    "operator": "gt",
+                    "rightOperand": 99
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables xyz to share the asset 8888.photo only if at least one of the following applies: (count is greater than 362; or percentage is greater than 99).",
+    "keywords": [
+      "share"
+    ]
+  },
+  {
+    "id": "90d8e560-d16c-4af5-8a87-554101485c62",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/ba24bf84-54fc-445b-a1b9-56bbb8dcd0ca",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:5555.dataset",
+          "action": "secondaryUse",
+          "assigner": "http://example.com/team:dev"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:movie456",
+          "action": "play",
+          "assigner": "http://example.com/team:dev",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isNoneOf",
+              "rightOperand": "video/webm"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "deliveryChannel",
+              "operator": "neq",
+              "rightOperand": "sms"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to secondaryUse the asset 5555.dataset. disallows a party to play the asset movie456 only if fileFormat is none of video/webm and deliveryChannel is not equal to sms.",
+    "keywords": [
+      "play",
+      "secondaryUse"
+    ]
+  },
+  {
+    "id": "92e639d2-a84e-4e27-81ac-cb3425508634",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/72ef135c-aa49-45ad-8211-008a4ddffb2c",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/video:clip123",
+          "action": "anonymize",
+          "assigner": "http://example.com/party:person:billie",
+          "assignee": "http://example.com/party:org:xyz"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/video:clip123",
+          "action": "edit",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "deliveryChannel",
+              "operator": "isA",
+              "rightOperand": "mobile"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "timeInterval",
+              "operator": "gteq",
+              "rightOperand": "2025-05-23T12:32:20Z/2025-05-28T12:32:20Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "authorizes xyz to anonymize the asset clip123. prohibits xyz to edit the asset clip123 only if deliveryChannel is a mobile and timeInterval is greater than or equal to 2025-05-23T12:32:20Z/2025-05-28T12:32:20Z.",
+    "keywords": [
+      "anonymize",
+      "edit"
+    ]
+  },
+  {
+    "id": "e3ef152f-42a9-48b3-b7f1-7069f4d382aa",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/2a630513-322a-4f4b-ba57-cf018a0d7ec6",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/video:clip123",
+          "action": "aggregate",
+          "assigner": "http://example.com/org:xyz",
+          "assignee": "http://example.com/org:xyz"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:8888.photo",
+          "action": "watermark",
+          "assigner": "http://example.com/org:xyz",
+          "assignee": "http://example.com/org:xyz"
+        }
+      ]
+    },
+    "text": "authorizes xyz to aggregate the asset clip123. disallows xyz to watermark the asset 8888.photo.",
+    "keywords": [
+      "aggregate",
+      "watermark"
+    ]
+  },
+  {
+    "id": "387be425-ee06-48ca-b6ab-8a5d0c89c1f7",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/efb537b0-58bd-42ec-8bc3-c11917f1e4ff",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:7777.document",
+          "action": "attribute",
+          "assigner": "http://example.com/person:carol",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isAnyOf",
+              "rightOperand": "image/gif"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "count",
+              "operator": "gteq",
+              "rightOperand": 656
+            }
+          ]
+        }
+      ]
+    },
+    "text": "grants permission to a party to attribute the asset 7777.document only if fileFormat is any of image/gif and count is greater than or equal to 656.",
+    "keywords": [
+      "attribute"
+    ]
+  },
+  {
+    "id": "25a685a5-ac7e-4162-a45d-1694de014868",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/b1c62555-876c-4747-94d5-5ae9df7eb12d",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:5555.dataset",
+          "action": "use",
+          "assigner": "http://example.com/party:person:billie",
+          "assignee": "http://example.com/person:bob"
+        }
+      ]
+    },
+    "text": "grants permission to bob to use the asset 5555.dataset.",
+    "keywords": [
+      "use"
+    ]
+  },
+  {
+    "id": "e753e11d-c082-4af1-8721-cf39c295f384",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/028102b5-f3fc-4bcd-b403-ed263358262b",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:3333",
+          "action": "lease",
+          "assigner": "http://example.com/person:carol",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "absolutePosition",
+              "operator": "hasPart",
+              "rightOperand": "http://example.com/value/absolutePosition/410fe6a1"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "dateTime",
+              "operator": "gteq",
+              "rightOperand": "2026-01-26T12:32:20Z"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/text:article789",
+          "action": "inform",
+          "assigner": "http://example.com/person:carol",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isAnyOf",
+              "rightOperand": "audio/mpeg"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "eq",
+              "rightOperand": "image/gif"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables bob to lease the asset 3333 only if absolutePosition has part http://example.com/value/absolutePosition/410fe6a1 and dateTime is greater than or equal to 2026-01-26T12:32:20Z. mandates bob to inform the asset article789 only if fileFormat is any of audio/mpeg and fileFormat is equal to image/gif.",
+    "keywords": [
+      "inform",
+      "lease"
+    ]
+  },
+  {
+    "id": "3d2aa397-c3d2-4082-ba7f-d7f33a428f28",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/40ebb5af-d5d9-4d8e-9f74-6543c10e6ea8",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/music:track001",
+          "action": "play",
+          "assigner": "http://example.com/org:xyz",
+          "assignee": "http://example.com/person:carol",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "lt",
+                    "rightOperand": 1194
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "recipient",
+                    "operator": "neq",
+                    "rightOperand": "http://example.com/recipient/group/ad262eea"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "authorizes carol to play the asset track001 only if elapsedTime is less than 1194 and recipient is not equal to http://example.com/recipient/group/ad262eea.",
+    "keywords": [
+      "play"
+    ]
+  },
+  {
+    "id": "6379dfac-8de1-4dd1-87d9-66c970a1179d",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/c885005e-a241-43f6-9204-06dba1fb6a39",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/music:track001",
+          "action": "execute",
+          "assigner": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "eq",
+              "rightOperand": "video/webm"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "recipient",
+              "operator": "hasPart",
+              "rightOperand": "http://example.com/recipient/user/a5078667"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to execute the asset track001 only if fileFormat is equal to video/webm and recipient has part http://example.com/recipient/user/a5078667.",
+    "keywords": [
+      "execute"
+    ]
+  },
+  {
+    "id": "168f3f3a-8f09-477e-be02-6a85938e1cb1",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/d656f344-30b4-4c28-9cfb-ae5b648d94b8",
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "install",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "absoluteSpatialPosition",
+              "operator": "isA",
+              "rightOperand": "http://www.wikidata.org/entity/Q30"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/data:dataset01",
+          "action": "distribute",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "commercial"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "prohibits 0001 to install the asset 9898.movie only if absoluteSpatialPosition is a http://www.wikidata.org/entity/Q30. requires 0001 to distribute the asset dataset01 only if purpose is equal to commercial.",
+    "keywords": [
+      "distribute",
+      "install"
+    ]
+  },
+  {
+    "id": "81752fc6-898b-49be-9707-87a77f6bb7f6",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/554318ee-f027-47d2-9783-bc043013d7a4",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/image:img456",
+          "action": "watermark",
+          "assigner": "http://example.com/team:marketing",
+          "assignee": "http://example.com/person:carol",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "relativeSpatialPosition",
+              "operator": "eq",
+              "rightOperand": "above"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "resolution",
+              "operator": "eq",
+              "rightOperand": "4K"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables carol to watermark the asset img456 only if relativeSpatialPosition is equal to above and resolution is equal to 4K.",
+    "keywords": [
+      "watermark"
+    ]
+  },
+  {
+    "id": "7416ba76-ffdc-4886-9c8a-f2fdb53c2db0",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/9c959427-c68a-415d-9850-dc4d53ae0902",
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/data:dataset01",
+          "action": "use",
+          "assigner": "http://example.com/party:org:abc",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "isA",
+                    "rightOperand": "http://www.wikidata.org/entity/Q449"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "hasPart",
+                    "rightOperand": "http://www.wikidata.org/entity/Q205"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "prohibits a party to use the asset dataset01 only if at least one of the following applies: (absoluteSpatialPosition is a http://www.wikidata.org/entity/Q449; or absoluteSpatialPosition has part http://www.wikidata.org/entity/Q205).",
+    "keywords": [
+      "use"
+    ]
+  },
+  {
+    "id": "f67c32d7-b31f-4516-8d0b-a0eb5c0f1d0b",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/22846d04-805e-4896-a912-6216d21d14ee",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:document789",
+          "action": "copy",
+          "assigner": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "language",
+                    "operator": "neq",
+                    "rightOperand": "en"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "delayPeriod",
+                    "operator": "lteq",
+                    "rightOperand": "P27D"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables a party to copy the asset document789 only if language is not equal to en and delayPeriod is less than or equal to P27D.",
+    "keywords": [
+      "copy"
+    ]
+  },
+  {
+    "id": "2f00cf19-35c1-4a9d-ac71-1a7ec70fe9ba",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/9ff20184-aaff-4e96-8654-1ca39c0cbd6d",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:3333",
+          "action": "modify",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/team:marketing"
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:6666.music",
+          "action": "textToSpeech",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/team:marketing",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "recipient",
+                    "operator": "eq",
+                    "rightOperand": "http://example.com/recipient/group/793dc2c3"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isA",
+                    "rightOperand": "image/jpeg"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "authorizes marketing to modify the asset 3333. mandates marketing to textToSpeech the asset 6666.music only if at least one of the following applies: (recipient is equal to http://example.com/recipient/group/793dc2c3; or fileFormat is a image/jpeg).",
+    "keywords": [
+      "modify",
+      "textToSpeech"
+    ]
+  },
+  {
+    "id": "cc821919-4702-4a2d-9b46-ee770427784f",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/011ee40f-9f84-4071-8200-cdbb4173a565",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/data:dataset01",
+          "action": "use",
+          "assigner": "http://example.com/party:org:123",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "non-commercial"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "grants permission to a party to use the asset dataset01 only if purpose is equal to non-commercial.",
+    "keywords": [
+      "use"
+    ]
+  },
+  {
+    "id": "df9f51e7-b7b4-486a-a8c5-254c649b8e3b",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/b914759e-4233-475b-bcc1-4c60de3dfeb0",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/data:dataset01",
+          "action": "secondaryUse",
+          "assigner": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "count",
+              "operator": "gteq",
+              "rightOperand": 743
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": 2
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/image:img456",
+          "action": "digitize",
+          "assigner": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "version",
+              "operator": "neq",
+              "rightOperand": "3.4.5"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "grants permission to a party to secondaryUse the asset dataset01 only if count is greater than or equal to 743 and count is greater than 2. prohibits a party to digitize the asset img456 only if version is not equal to 3.4.5.",
+    "keywords": [
+      "digitize",
+      "secondaryUse"
+    ]
+  },
+  {
+    "id": "88f8acda-8dab-4716-8e22-5ddbcaa0b144",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/2a5a405b-286e-4dfc-a3da-526184d6f33e",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:photo123",
+          "action": "index",
+          "assigner": "http://example.com/person:alice",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isAnyOf",
+                    "rightOperand": "video/webm"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "dateTime",
+                    "operator": "lteq",
+                    "rightOperand": "2025-05-23T12:32:20Z"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:document789",
+          "action": "anonymize",
+          "assigner": "http://example.com/person:alice",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "hasPart",
+                    "rightOperand": "http://www.wikidata.org/entity/Q30"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "delayPeriod",
+                    "operator": "gteq",
+                    "rightOperand": "P3Y"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables bob to index the asset photo123 only if exactly one of the following applies: (fileFormat is any of video/webm; or dateTime is less than or equal to 2025-05-23T12:32:20Z). obligates bob to anonymize the asset document789 only if absoluteSpatialPosition has part http://www.wikidata.org/entity/Q30 and delayPeriod is greater than or equal to P3Y.",
+    "keywords": [
+      "anonymize",
+      "index"
+    ]
+  },
+  {
+    "id": "5b2294f3-10ca-4cea-8ae5-edf1621ff76e",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/a09ab064-0778-4bcc-85bb-c4752968a641",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "execute",
+          "assigner": "http://example.com/team:marketing"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "edit",
+          "assigner": "http://example.com/team:marketing",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "relativePosition",
+                    "operator": "eq",
+                    "rightOperand": "http://example.com/value/relativePosition/a63f5ad3"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "isPartOf",
+                    "rightOperand": "http://www.wikidata.org/entity/Q668"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to execute the asset 6666.music. denies a party to edit the asset 9898.movie only if relativePosition is equal to http://example.com/value/relativePosition/a63f5ad3 and absoluteSpatialPosition is part of http://www.wikidata.org/entity/Q668.",
+    "keywords": [
+      "edit",
+      "execute"
+    ]
+  },
+  {
+    "id": "bc60b03c-944b-4a6a-9f12-50ec4427e525",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/8bfc2de4-c461-4af3-b0e6-31e562ffd2a9",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:8888.photo",
+          "action": "display",
+          "assigner": "http://example.com/team:dev",
+          "assignee": "http://example.com/party:org:xyz",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isAnyOf",
+                    "rightOperand": "text/csv"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "resolution",
+                    "operator": "isAnyOf",
+                    "rightOperand": "720p"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits xyz to display the asset 8888.photo only if fileFormat is any of text/csv and resolution is any of 720p.",
+    "keywords": [
+      "display"
+    ]
+  },
+  {
+    "id": "7b8e12d7-ccb0-426e-8fe2-ecd5b2486631",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/24ec53b4-f8b0-4143-aa0f-08269e20035c",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:8888.photo",
+          "action": "attribute",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/team:dev",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "count",
+                    "operator": "lteq",
+                    "rightOperand": 153
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "isA",
+                    "rightOperand": "http://www.wikidata.org/entity/Q927"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:9999.movie",
+          "action": "anonymize",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/team:dev",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "metering",
+                    "operator": "eq",
+                    "rightOperand": "enabled"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "isAnyOf",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-06-14T12:32:20Z"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:6666.music",
+          "action": "move",
+          "assigner": "http://example.com/org:abc",
+          "assignee": "http://example.com/team:dev"
+        }
+      ]
+    },
+    "text": "authorizes dev to attribute the asset 8888.photo only if at least one of the following applies: (count is less than or equal to 153; or absoluteSpatialPosition is a http://www.wikidata.org/entity/Q927). prohibits dev to anonymize the asset 9999.movie only if exactly one of the following applies: (metering is equal to enabled; or timeInterval is any of 2025-05-23T12:32:20Z/2025-06-14T12:32:20Z). expects dev to move the asset 6666.music.",
+    "keywords": [
+      "anonymize",
+      "attribute",
+      "move"
+    ]
+  },
+  {
+    "id": "c985daa6-4073-4187-86c7-a818718d1609",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/d798e7f0-a128-475b-91c8-1469bc952196",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/text:article789",
+          "action": "print",
+          "assigner": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isNoneOf",
+                    "rightOperand": "text/html"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "percentage",
+                    "operator": "lt",
+                    "rightOperand": 99
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:document789",
+          "action": "read",
+          "assigner": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "hasPart",
+                    "rightOperand": "http://www.wikidata.org/entity/Q145"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "lteq",
+                    "rightOperand": 945
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables a party to print the asset article789 only if exactly one of the following applies: (fileFormat is none of text/html; or percentage is less than 99). denies a party to read the asset document789 only if at least one of the following applies: (absoluteSpatialPosition has part http://www.wikidata.org/entity/Q145; or elapsedTime is less than or equal to 945).",
+    "keywords": [
+      "print",
+      "read"
+    ]
+  },
+  {
+    "id": "7c98e4b9-858d-4dc4-9f22-7c607f72ad42",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/ddf61d70-9d24-463c-af13-498e48a536c1",
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:movie456",
+          "action": "execute",
+          "assigner": "http://example.com/party:person:billie",
+          "assignee": "http://example.com/party:org:123"
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/music:track001",
+          "action": "textToSpeech",
+          "assigner": "http://example.com/party:person:billie",
+          "assignee": "http://example.com/party:org:123",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "recipient",
+                    "operator": "isA",
+                    "rightOperand": "http://example.com/recipient/user/077100b3"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "gt",
+                    "rightOperand": 2029
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "prohibits 123 to execute the asset movie456. expects 123 to textToSpeech the asset track001 only if exactly one of the following applies: (recipient is a http://example.com/recipient/user/077100b3; or elapsedTime is greater than 2029).",
+    "keywords": [
+      "execute",
+      "textToSpeech"
+    ]
+  },
+  {
+    "id": "1e27ef1d-0039-4921-ab16-29f740dcbba2",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/71638676-5ad6-460b-9485-73a1184b2178",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "play",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/person:alice"
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:3333",
+          "action": "modify",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "elapsedTime",
+              "operator": "gteq",
+              "rightOperand": 2853
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "version",
+              "operator": "isAnyOf",
+              "rightOperand": "1.6.2"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows alice to play the asset 6666.music. requires alice to modify the asset 3333 only if elapsedTime is greater than or equal to 2853 and version is any of 1.6.2.",
+    "keywords": [
+      "modify",
+      "play"
+    ]
+  },
+  {
+    "id": "40ae59b3-9f09-4354-ac51-53383a54c2dd",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/0df3cf14-1a86-4045-9336-dcf0ba361b6b",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:7777.document",
+          "action": "anonymize",
+          "assigner": "http://example.com/person:carol",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isA",
+              "rightOperand": "video/mp4"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "grants permission to a party to anonymize the asset 7777.document only if fileFormat is a video/mp4.",
+    "keywords": [
+      "anonymize"
+    ]
+  },
+  {
+    "id": "d9200a9a-5eaf-4c99-8842-dbba761674d3",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/9dfbf8e1-0208-4908-bc39-cc29218f0356",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:document789",
+          "action": "uninstall",
+          "assigner": "http://example.com/party:org:123",
+          "assignee": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "percentage",
+              "operator": "gt",
+              "rightOperand": 97
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "isAnyOf",
+              "rightOperand": "application/pdf"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/video:clip123",
+          "action": "execute",
+          "assigner": "http://example.com/party:org:123",
+          "assignee": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "dateTime",
+              "operator": "isNoneOf",
+              "rightOperand": "2026-02-10T12:32:20Z"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "absolutePosition",
+              "operator": "isA",
+              "rightOperand": "http://example.com/value/absolutePosition/20a64cdb"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows 0001 to uninstall the asset document789 only if percentage is greater than 97 and fileFormat is any of application/pdf. disallows 0001 to execute the asset clip123 only if dateTime is none of 2026-02-10T12:32:20Z and absolutePosition is a http://example.com/value/absolutePosition/20a64cdb.",
+    "keywords": [
+      "execute",
+      "uninstall"
+    ]
+  },
+  {
+    "id": "184866ca-d460-460b-993a-ac9455ff9698",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/4f9a05c3-19ce-40ed-870a-888439a1575f",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:document789",
+          "action": "uninstall",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/party:0001",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "neq",
+                    "rightOperand": 791
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "delayPeriod",
+                    "operator": "eq",
+                    "rightOperand": "P6M"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows 0001 to uninstall the asset document789 only if elapsedTime is not equal to 791 and delayPeriod is equal to P6M.",
+    "keywords": [
+      "uninstall"
+    ]
+  },
+  {
+    "id": "b1951edb-ba2e-4386-b02f-12d8ae0d9e18",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/33c2f27a-a464-4b4d-85a7-a112c689de4d",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/data:dataset01",
+          "action": "distribute",
+          "assigner": "http://example.com/party:org:abc",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "percentage",
+                    "operator": "gt",
+                    "rightOperand": 57
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "eq",
+                    "rightOperand": "http://www.wikidata.org/entity/Q258"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to distribute the asset dataset01 only if exactly one of the following applies: (percentage is greater than 57; or absoluteSpatialPosition is equal to http://www.wikidata.org/entity/Q258).",
+    "keywords": [
+      "distribute"
+    ]
+  },
+  {
+    "id": "fbab8c4a-37da-41b1-8b7c-628848dca260",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/f2bafe66-603e-43bb-9f3b-6a8d5171009d",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "delete",
+          "assigner": "http://example.com/team:marketing",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "media",
+              "operator": "isA",
+              "rightOperand": "streaming"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables a party to delete the asset 6666.music only if media is a streaming.",
+    "keywords": [
+      "delete"
+    ]
+  },
+  {
+    "id": "fd2c47e9-b2e8-4025-b09e-1a3210a6ccee",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/a93be525-ded8-44da-8601-1de1c2fa0c82",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:7777.document",
+          "action": "uninstall",
+          "assigner": "http://example.com/person:alice"
+        }
+      ]
+    },
+    "text": "authorizes a party to uninstall the asset 7777.document.",
+    "keywords": [
+      "uninstall"
+    ]
+  },
+  {
+    "id": "1bc55a2f-335c-4b60-89dc-6bf7910b2756",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/120eabe8-de14-4d48-95e3-1491ebbb5158",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:movie456",
+          "action": "present",
+          "assigner": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "resolution",
+                    "operator": "isAnyOf",
+                    "rightOperand": "4K"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "eq",
+                    "rightOperand": "image/png"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "anonymize",
+          "assigner": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "metering",
+                    "operator": "eq",
+                    "rightOperand": "enabled"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "elapsedTime",
+                    "operator": "eq",
+                    "rightOperand": 722
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits a party to present the asset movie456 only if exactly one of the following applies: (resolution is any of 4K; or fileFormat is equal to image/png). restricts a party to anonymize the asset 9898.movie only if exactly one of the following applies: (metering is equal to enabled; or elapsedTime is equal to 722).",
+    "keywords": [
+      "anonymize",
+      "present"
+    ]
+  },
+  {
+    "id": "242afb9d-3d5d-4e21-87ab-88aad6f62607",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/927f5506-240d-4733-a7b8-c3a61e0e83a7",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:3333",
+          "action": "include",
+          "assigner": "http://example.com/party:org:456",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "percentage",
+                    "operator": "gteq",
+                    "rightOperand": 100
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "isA",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-06-22T12:32:20Z"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:movie456",
+          "action": "include",
+          "assigner": "http://example.com/party:org:456",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "gt",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-06-07T12:32:20Z"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "metering",
+                    "operator": "neq",
+                    "rightOperand": "disabled"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to include the asset 3333 only if percentage is greater than or equal to 100 and timeInterval is a 2025-05-23T12:32:20Z/2025-06-22T12:32:20Z. prohibits a party to include the asset movie456 only if timeInterval is greater than 2025-05-23T12:32:20Z/2025-06-07T12:32:20Z and metering is not equal to disabled.",
+    "keywords": [
+      "include"
+    ]
+  },
+  {
+    "id": "a7920572-2042-4710-9809-474f152d2803",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/c8037190-5bf2-4668-be8b-e731300cd249",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/image:img456",
+          "action": "digitize",
+          "assigner": "http://example.com/team:dev"
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:document789",
+          "action": "extract",
+          "assigner": "http://example.com/team:dev",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": 631
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "delayPeriod",
+              "operator": "neq",
+              "rightOperand": "PT5H"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to digitize the asset img456. prohibits a party to extract the asset document789 only if count is greater than 631 and delayPeriod is not equal to PT5H.",
+    "keywords": [
+      "digitize",
+      "extract"
+    ]
+  },
+  {
+    "id": "6664b595-de96-484f-9e34-74c82e482a3d",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/e4ccc765-5e71-4809-96f7-9b61b7d9b986",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:9999.movie",
+          "action": "present",
+          "assigner": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "timeInterval",
+                    "operator": "isNoneOf",
+                    "rightOperand": "2025-05-23T12:32:20Z/2025-05-27T12:32:20Z"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "relativePosition",
+                    "operator": "hasPart",
+                    "rightOperand": "http://example.com/value/relativePosition/115b128d"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "authorizes a party to present the asset 9999.movie only if timeInterval is none of 2025-05-23T12:32:20Z/2025-05-27T12:32:20Z and relativePosition has part http://example.com/value/relativePosition/115b128d.",
+    "keywords": [
+      "present"
+    ]
+  },
+  {
+    "id": "9d61a695-5e4d-4d56-a2f1-a29abd1bd1d3",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Set",
+      "uid": "http://example.com/policy/5a9936f8-a7ab-4360-8bab-cdb675faf328",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/video:clip123",
+          "action": "anonymize",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/person:carol"
+        }
+      ]
+    },
+    "text": "authorizes carol to anonymize the asset clip123.",
+    "keywords": [
+      "anonymize"
+    ]
+  },
+  {
+    "id": "ab69065c-dcc5-42f1-ae67-16f8f2510216",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/797b0071-b0f5-4144-92d1-9b22fe7db688",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:6666.music",
+          "action": "download",
+          "assigner": "http://example.com/party:0001",
+          "assignee": "http://example.com/org:sony",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "recipient",
+                    "operator": "isA",
+                    "rightOperand": "http://example.com/recipient/user/08b33688"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "deliveryChannel",
+                    "operator": "eq",
+                    "rightOperand": "mobile"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:3333",
+          "action": "lease",
+          "assigner": "http://example.com/party:0001",
+          "assignee": "http://example.com/org:sony"
+        }
+      ]
+    },
+    "text": "enables sony to download the asset 6666.music only if exactly one of the following applies: (recipient is a http://example.com/recipient/user/08b33688; or deliveryChannel is equal to mobile). restricts sony to lease the asset 3333.",
+    "keywords": [
+      "download",
+      "lease"
+    ]
+  },
+  {
+    "id": "cea51141-a823-4192-ba0b-da0c6867f218",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy/6eb9ceee-2487-4936-ab29-076682fc64ec",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:movie456",
+          "action": "install",
+          "assigner": "http://example.com/party:org:xyz",
+          "assignee": "http://example.com/org:abc",
+          "constraint": [
+            {
+              "or": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "deliveryChannel",
+                    "operator": "neq",
+                    "rightOperand": "mobile"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "resolution",
+                    "operator": "isAnyOf",
+                    "rightOperand": "720p"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "@type": "Duty",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "edit",
+          "assigner": "http://example.com/party:org:xyz",
+          "assignee": "http://example.com/org:abc",
+          "constraint": [
+            {
+              "and": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "deliveryChannel",
+                    "operator": "isNoneOf",
+                    "rightOperand": "email"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "dateTime",
+                    "operator": "lteq",
+                    "rightOperand": "2024-05-31T12:32:20Z"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "enables abc to install the asset movie456 only if at least one of the following applies: (deliveryChannel is not equal to mobile; or resolution is any of 720p). obligates abc to edit the asset 9898.movie only if deliveryChannel is none of email and dateTime is less than or equal to 2024-05-31T12:32:20Z.",
+    "keywords": [
+      "edit",
+      "install"
+    ]
+  },
+  {
+    "id": "26d33b02-8de6-4679-bf80-3d659d7f3554",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Offer",
+      "uid": "http://example.com/policy/c9c269db-d896-4d58-b8d6-28fbea163499",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:movie456",
+          "action": "stream",
+          "assigner": "http://example.com/org:xyz"
+        }
+      ]
+    },
+    "text": "authorizes a party to stream the asset movie456.",
+    "keywords": [
+      "stream"
+    ]
+  },
+  {
+    "id": "3a375e07-8331-4370-9c94-ecd81eb6a4cc",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/6b5ff036-536f-46a8-a60c-31a5e06aaad3",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/asset:9898.movie",
+          "action": "stream",
+          "assigner": "http://example.com/org:xyz",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "unitOfCount",
+              "operator": "lt",
+              "rightOperand": 431
+            }
+          ]
+        }
+      ]
+    },
+    "text": "allows a party to stream the asset 9898.movie only if unitOfCount is less than 431.",
+    "keywords": [
+      "stream"
+    ]
+  },
+  {
+    "id": "8483271a-9a29-4f0d-8272-840ea6d1cd4c",
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Policy",
+      "uid": "http://example.com/policy/3d86f661-8ae1-4966-87ae-f0e070076313",
+      "permission": [
+        {
+          "@type": "Permission",
+          "target": "http://example.com/music:track001",
+          "action": "move",
+          "assigner": "http://example.com/person:bob",
+          "assignee": "http://example.com/org:sony",
+          "constraint": [
+            {
+              "@type": "Constraint",
+              "leftOperand": "fileFormat",
+              "operator": "neq",
+              "rightOperand": "image/jpeg"
+            },
+            {
+              "@type": "Constraint",
+              "leftOperand": "version",
+              "operator": "isNoneOf",
+              "rightOperand": "2.0.0"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "@type": "Prohibition",
+          "target": "http://example.com/asset:8888.photo",
+          "action": "print",
+          "assigner": "http://example.com/team:marketing",
+          "assignee": "http://example.com/org:sony",
+          "constraint": [
+            {
+              "xone": {
+                "@list": [
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "absoluteSpatialPosition",
+                    "operator": "eq",
+                    "rightOperand": "http://www.wikidata.org/entity/Q142"
+                  },
+                  {
+                    "@type": "Constraint",
+                    "leftOperand": "fileFormat",
+                    "operator": "isAnyOf",
+                    "rightOperand": "image/gif"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "text": "permits sony to move the asset track001 only if fileFormat is not equal to image/jpeg and version is none of 2.0.0. restricts sony to print the asset 8888.photo only if exactly one of the following applies: (absoluteSpatialPosition is equal to http://www.wikidata.org/entity/Q142; or fileFormat is any of image/gif).",
+    "keywords": [
+      "move",
+      "print"
+    ]
+  }
+]

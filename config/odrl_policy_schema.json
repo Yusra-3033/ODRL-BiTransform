@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ODRL Policy",
+  "type": "object",
+  "required": ["@context", "@type", "uid"],
+  "properties": {
+    "@context": {
+      "type": "string",
+      "const": "http://www.w3.org/ns/odrl.jsonld"
+    },
+    "@type": {
+      "type": "string",
+      "enum": ["Policy", "Set", "Offer", "Agreement"]
+    },
+    "uid": {
+      "type": "string",
+      "format": "uri"
+    },
+    "permission": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/rulePermission" }
+    },
+    "prohibition": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/ruleProhibition" }
+    },
+    "obligation": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/ruleObligation" }
+    }
+  },
+  "definitions": {
+    "ruleBase": {
+      "type": "object",
+      "required": ["target", "action"],
+      "properties": {
+        "target": { "type": "string", "format": "uri" },
+        "action": { "type": "string" },
+        "assigner": { "type": "string", "format": "uri" },
+        "assignee": { "type": "string", "format": "uri" },
+        "constraint": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "#/definitions/constraint" },
+              { "$ref": "#/definitions/logicalConstraint" }
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "rulePermission": {
+      "allOf": [
+        { "$ref": "#/definitions/ruleBase" },
+        {
+          "properties": {
+            "@type": { "type": "string", "const": "Permission" }
+          }
+        }
+      ]
+    },
+    "ruleProhibition": {
+      "allOf": [
+        { "$ref": "#/definitions/ruleBase" },
+        {
+          "properties": {
+            "@type": { "type": "string", "const": "Prohibition" }
+          }
+        }
+      ]
+    },
+    "ruleObligation": {
+      "allOf": [
+        { "$ref": "#/definitions/ruleBase" },
+        {
+          "properties": {
+            "@type": { "type": "string", "const": "Duty" }
+          }
+        }
+      ]
+    },
+    "constraint": {
+      "type": "object",
+      "required": ["leftOperand", "operator", "rightOperand"],
+      "properties": {
+        "@type": { "type": "string", "const": "Constraint" },
+        "leftOperand": { "type": "string" },
+        "operator": { "type": "string" },
+        "rightOperand": {}
+      },
+      "additionalProperties": true
+    },
+    "logicalConstraint": {
+      "type": "object",
+      "anyOf": [
+        {
+          "required": ["and"],
+          "properties": {
+            "and": {
+              "type": "object",
+              "required": ["@list"],
+              "properties": {
+                "@list": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      { "$ref": "#/definitions/constraint" },
+                      { "$ref": "#/definitions/logicalConstraint" }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "required": ["or"],
+          "properties": {
+            "or": {
+              "type": "object",
+              "required": ["@list"],
+              "properties": {
+                "@list": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      { "$ref": "#/definitions/constraint" },
+                      { "$ref": "#/definitions/logicalConstraint" }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "required": ["xone"],
+          "properties": {
+            "xone": {
+              "type": "object",
+              "required": ["@list"],
+              "properties": {
+                "@list": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      { "$ref": "#/definitions/constraint" },
+                      { "$ref": "#/definitions/logicalConstraint" }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
