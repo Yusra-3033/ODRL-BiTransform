@@ -1,4 +1,4 @@
-# 🎓 Master Thesis Project
+## 🎓 Leveraging Large Language Models for Bidirectional Translation Between ODRL Policies and Natural Language
 
 This project aims to generate and validate synthetic ODRL 2.2 policy data for training natural language translation models, combining structured templates and GPT-based generation.
 
