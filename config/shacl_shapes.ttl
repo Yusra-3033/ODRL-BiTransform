@@ -1,0 +1,76 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Shape for Policy
+[] a sh:NodeShape ;
+   sh:targetClass odrl:Policy ;
+   sh:property [
+      sh:path odrl:uid ;
+      sh:datatype xsd:anyURI ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:permission ;
+      sh:minCount 0 ;
+   ] ;
+   sh:property [
+      sh:path odrl:prohibition ;
+      sh:minCount 0 ;
+   ] ;
+   sh:property [
+      sh:path odrl:obligation ;
+      sh:minCount 0 ;
+   ] .
+
+# Shape for Permissions
+[] a sh:NodeShape ;
+   sh:targetClass odrl:Permission ;
+   sh:property [
+      sh:path odrl:action ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:target ;
+      sh:minCount 1 ;
+   ] .
+
+# Shape for Prohibitions
+[] a sh:NodeShape ;
+   sh:targetClass odrl:Prohibition ;
+   sh:property [
+      sh:path odrl:action ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:target ;
+      sh:minCount 1 ;
+   ] .
+
+# Shape for Obligations
+[] a sh:NodeShape ;
+   sh:targetClass odrl:Obligation ;
+   sh:property [
+      sh:path odrl:action ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:target ;
+      sh:minCount 1 ;
+   ] .
+
+# Shape for Constraints
+[] a sh:NodeShape ;
+   sh:targetSubjectsOf odrl:constraint ;
+   sh:property [
+      sh:path odrl:leftOperand ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:operator ;
+      sh:minCount 1 ;
+   ] ;
+   sh:property [
+      sh:path odrl:rightOperand ;
+      sh:minCount 1 ;
+   ] .

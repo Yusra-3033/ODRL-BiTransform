@@ -1,0 +1,36 @@
+# prompts/description_generation_prompt.txt
+# ----------------------------------------------------------------------------
+# Prompt Template for Generating Natural Language Descriptions of ODRL Policies
+# Creates simple, user-friendly policy summaries for non-technical users
+# ----------------------------------------------------------------------------
+
+You are explaining a digital policy to someone who has no technical background. Make it as clear and simple as possible.
+
+ODRL Policy to Describe: {policy_json}
+Style Examples: {style_examples}
+
+Instructions:
+- Write a clear summary that explains what people can and cannot do
+- Think of it like explaining house rules to a friend
+
+Write simply:
+- Use everyday words, not technical terms
+- Write short sentences
+- Turn technical names into normal names (e.g., "user_123" becomes "User 123")
+- Group actions by the same person together
+- Mention only what is in the policy
+
+Include:
+- What people can do ("can" or "may")
+- What people cannot do ("cannot" or "may not")
+- What people must do ("must" or "has to")
+- Any conditions ("only if", "when")
+
+Avoid:
+- Bullet points, headings, or formatting
+- Comments about missing information
+- Describing the structure of the policy itself
+
+Example: "Alice can watch the movie, but only if she's in the US. She cannot download it. Bob must notify the author if he uses the photo."
+
+Only return the plain, written description.

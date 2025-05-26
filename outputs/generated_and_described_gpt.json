@@ -1,0 +1,2589 @@
+[
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:c68e96d7851f49c582064927341d65c0",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "print",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:48dd017cf0be4f6aad6033c1a725a497",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:43eaaacba0114369861381412d2ddf38",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:48b71a9092c4406a9dcb621b3485a05e",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "isNoneOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:5810cb8e11574865b1827f9c1c3e7af7",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isAnyOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:dfc347e3f1ef4d82ba573830b26333f2",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:039b3e08223449abb1ec9bf5962c8fdf",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isNoneOf",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:a34dcc1192c84a0aaf169f74a15a5fbf",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "lt",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "isAnyOf",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:4e9af602f75543669094916759fe7779",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "lt",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isAnyOf",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:b04a84464f704f378a7d0bc28105ecff",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "gt",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:acb0b48e09854d6f94a3e6bb403f68c5",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "gt",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:ea5bc83c614e483cb179584e53a42032",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isNoneOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:0b6c3479ef47447fb7bc6ded61f54ecc",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "gt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:ae78f6bf906442efac89dec10d2ac362",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "gt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:716ab5760a99465fa49e10a7d0d6dc80",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:66020027eaa645b9a7bedfe6f34e8dac",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "gt",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "systemDevice",
+              "operator": "lt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:3f3a53180332401b99b9591298be6268",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:452f6e0570dd4c80b4c541a35a8a5340",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:18c30439e9c14853be79ba8393324dfa",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:d1dafce443214a78b2f5293d608eb5bb",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:26fdb5ef3f0b4d3fb1f900deb2e953be",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:f34ee8fce8c84036ae1e2f738ab043ff",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "isAnyOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:a715ba1f185941bf8e32781b98aea7ec",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isAnyOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:3af17ea231c84684a3c3ad442cf9f397",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isNoneOf",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:ace3865b277149ba837e6c40b417cb66",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "isAnyOf",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "systemDevice",
+              "operator": "isNoneOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:d8cdb0d78cf2412087a47c677c380e85",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:19496f7675a449ceaa709ad362228451",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "isNoneOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "eq",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:67a2d544776c46cb95fe9a888a216c38",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "isAnyOf",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "purpose",
+              "operator": "lt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:0eec004b625748be9e8ce093bd47671c",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:f4aada4582d24811bf254694450f7943",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        },
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "play",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "systemDevice",
+              "operator": "gt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": null
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": null
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:7b87edc03a20495a96d71a762ad1d2ea",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isAnyOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "lt",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:da73374ea059487697e4c4066d9ed62b",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "isAnyOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "lt",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "isNoneOf",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:665c00fc5f10440caa3acd49bae704e5",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isAnyOf",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "lt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:85ccae015db8438a85d1805b6fc22a68",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isAnyOf",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:af03111ed8924c1192e5270ac23eaae5",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:d9497c4859ea419eb6a4f38f43c81a3b",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "isAnyOf",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "isNoneOf",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:2d86839137f4439aae98cfd6605555e2",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "lt",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "lt",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "gt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:e20b5d99e8794b37813f985c1556652f",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "lt",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "eq",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "systemDevice",
+              "operator": "isAnyOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:28518ebdf92941648f77d64b1128c1eb",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isNoneOf",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:7a4cc1555c4b4205a005492440b5371b",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isNoneOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": []
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:507da76c59434f0681331f4bcdb91f07",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "eq",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "isAnyOf",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "lt",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:7941892a14ac4c73877b122925ba3bb4",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "gt",
+              "rightOperand": 5
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:ddf42165643c4a39a8b2766925260177",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "eq",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isAnyOf",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:f1acc763453d4e2b86a4e9900c3674cb",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "lt",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:dd260a3ac5234233863b53b3cfe7e777",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "count",
+              "operator": "gt",
+              "rightOperand": 3
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "laptop"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:8fed2c2a2b7b48a794085d7832334196",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isNoneOf",
+              "rightOperand": 10
+            }
+          ]
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "elapsedTime",
+              "operator": "isAnyOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "systemDevice",
+              "operator": "eq",
+              "rightOperand": "research"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:a7e743cbf22c4b6d8f28e65ca2985fe1",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": [
+            {
+              "leftOperand": "purpose",
+              "operator": "isNoneOf",
+              "rightOperand": "education"
+            }
+          ]
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            },
+            {
+              "leftOperand": "count",
+              "operator": "eq",
+              "rightOperand": "mobile"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  },
+  {
+    "odrl": {
+      "@context": "http://www.w3.org/ns/odrl.jsonld",
+      "@type": "Agreement",
+      "uid": "http://example.com/policy:501f17feadc84a98bbf6ed331e212031",
+      "permission": [
+        {
+          "target": "http://example.com/asset:book123",
+          "action": "read",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:alice",
+          "constraint": []
+        }
+      ],
+      "prohibition": [
+        {
+          "target": "http://example.com/asset:video456",
+          "action": "delete",
+          "assigner": "http://example.com/org:alpha",
+          "constraint": []
+        }
+      ],
+      "obligation": [
+        {
+          "target": "http://example.com/asset:doc789",
+          "action": "notify",
+          "assigner": "http://example.com/org:alpha",
+          "assignee": "http://example.com/person:bob",
+          "constraint": [
+            {
+              "leftOperand": "dateTime",
+              "operator": "lteq",
+              "rightOperand": "2023-12-31T23:59:59Z"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "",
+    "metadata": {
+      "model": "gpt-4-0125-preview",
+      "seed_source": "data/w3c_examples.jsonld + outputs/policies/template_based_policies.json",
+      "prompt_version": "v2.2",
+      "retries": 1
+    }
+  }
+]

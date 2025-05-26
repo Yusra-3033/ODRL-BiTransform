@@ -1,0 +1,71 @@
+You are an expert in ODRL (Open Digital Rights Language) policy modeling.
+
+Generate exactly ONE valid ODRL policy as a single JSON-LD object, fully compliant with the W3C ODRL 2.2 specification.
+
+Instructions:
+- Output ONLY a single JSON object — do NOT include multiple examples.
+- MUST include "@context": "http://www.w3.org/ns/odrl.jsonld"
+- MUST include a unique "uid" as an IRI
+- MUST use one of these top-level policy types: "Set", "Offer", or "Agreement" (choose randomly)
+- MUST include at least one rule under: "permission", "prohibition", or "obligation"
+- Every rule MUST include both "target" and "action"
+- Use only standard ODRL terms like: "read", "play", "use", "delete", etc.
+- If Constraints are included, they MUST have:
+  - "leftOperand"
+  - "operator"
+  - "rightOperand"
+- If Constraints are not included, include an empty array like `"constraint": []`
+- MUST NOT include markdown, extra text, comments, or explanations — ONLY return the JSON-LD.
+
+Variation Instructions:
+- Use different asset URIs for `target`, e.g., asset:book123, asset:video456, asset:doc789
+- Use different parties for `assigner` and `assignee`, e.g., org:alpha, person:alice, org:beta, person:bob
+- Use different actions across generations, e.g., mix "read", "play", "use", "print", "delete", etc.
+- Rotate between `"Set"`, `"Offer"`, and `"Agreement"` as the `@type` across different requests
+
+Compliance Tips:
+- "Offer" and "Agreement" MUST include an "assigner"
+- "Agreement" MUST include both "assigner" and "assignee"
+- Use `"@type": "Set"` if no parties are involved
+- Do NOT return arrays of policies
+- Do NOT return null fields or empty arrays
+
+Example template:
+{{
+  "@context": "http://www.w3.org/ns/odrl.jsonld",
+  "@type": "Set" | "Offer" | "Agreement",
+  "uid": "http://example.com/policy:{{ID}}",
+  "permission": [
+    {{
+      "target": "http://example.com/asset:{{ASSET_ID}}",
+      "action": "read",
+      "assigner": "http://example.com/org:{{ORG_ID}}",
+      "assignee": "http://example.com/person:{{PERSON_ID}}",
+      "constraint": [
+        {{
+          "leftOperand": "count",
+          "operator": "lt",
+          "rightOperand": 5
+        }}
+      ]
+    }}
+  ],
+  "prohibition": [
+    {{
+      "target": "http://example.com/asset:{{ASSET_ID}}",
+      "action": "delete",
+      "assigner": "http://example.com/org:{{ORG_ID}}"
+    }}
+  ],
+  "obligation": [
+    {{
+      "target": "http://example.com/asset:{{ASSET_ID}}",
+      "action": "notify",
+      "assigner": "http://example.com/org:{{ORG_ID}}",
+      "assignee": "http://example.com/person:{{PERSON_ID}}"
+    }}
+  ]
+}}
+
+RESPONSE FORMAT:
+Return only one valid JSON object. No comments, no explanation, no code block formatting.

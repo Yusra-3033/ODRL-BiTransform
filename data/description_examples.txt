@@ -1,0 +1,39 @@
+Simple Examples for Non-Technical Users:
+
+What people can do:
+- "Anyone can watch the movie."
+- "Billie can play the music."
+- "Students can use the textbook until December."
+- "Team members may download the photos."
+
+What people cannot do:
+- "John cannot share the video."
+- "Employees cannot print the confidential report."
+- "Users cannot copy the software."
+
+What people must do:
+- "Alice must pay $5 to download the song."
+- "Users must give credit to the author."
+- "Students must delete the file after the semester."
+
+When rules apply:
+- "Sarah can watch movies only at home."
+- "Downloads work only before January 1st."
+- "Printing is allowed only for personal use."
+- "Access is limited to people over 18."
+
+Good complete examples:
+- "Tom can stream videos if he's over 21. Lisa can download music but cannot share it. Everyone must give credit when using photos."
+- "Students can read the textbook and take notes. They cannot make copies or share it online."
+- "Bob can watch movies at home but not at work. He must pay $3 for each movie."
+
+Simple language patterns:
+- Use names: "Alice", "Bob", "the company" instead of technical IDs
+- Use everyday words: "watch" not "display", "download" not "retrieve"
+- Keep it short: "Alice can watch the movie" not "Alice is permitted to view the video content"
+- Group by person: "John can read the book but cannot share it with others"
+- Focus only on what's stated - don't mention what's missing
+
+Remedy examples:
+- "John cannot copy the file, but if he does, he must delete it immediately."
+- "Users cannot share videos, and if they do, they will lose access."

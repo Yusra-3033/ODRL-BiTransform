@@ -1,0 +1,14 @@
+# --- Core LLM Integration ---
+openai               
+python-dotenv        
+
+# --- Validation Tools ---
+jsonschema           
+pyshacl            
+rdflib             
+rdflib-jsonld        
+
+# --- Configuration and Utility Tools ---
+pyyaml           
+requests            
+matplotlib          
