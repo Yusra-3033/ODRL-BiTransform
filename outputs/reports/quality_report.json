@@ -1,0 +1,32 @@
+{
+  "total": 48,
+  "invalid_constraints": [],
+  "duplicate_uids": [],
+  "action_frequency": {
+    "read": 48,
+    "print": 1,
+    "notify": 48,
+    "delete": 47,
+    "play": 1
+  },
+  "left_operands": {
+    "dateTime": 33,
+    "purpose": 20,
+    "elapsedTime": 25,
+    "count": 22,
+    "systemDevice": 14
+  },
+  "operators": {
+    "lteq": 33,
+    "eq": 26,
+    "isNoneOf": 12,
+    "isAnyOf": 16,
+    "lt": 12,
+    "gt": 15
+  },
+  "targets": {
+    "http://example.com/asset:book123": 48,
+    "http://example.com/asset:video456": 49,
+    "http://example.com/asset:doc789": 48
+  }
+}

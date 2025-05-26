@@ -1,0 +1,85 @@
+### File: config/w3c_recommendations.txt
+
+The following principles derive from the [W3C ODRL Information Model 2.2](https://www.w3.org/TR/odrl-model/), which defines normative rules using RFC 2119 terms for ODRL policy modeling:
+
+## Policy Object
+- **MUST**:
+  - `@type`: Set, Offer, or Agreement (default: Set)
+  - `uid`: Unique IRI
+  - At least one of: permission, prohibition, obligation
+- **SHOULD**:
+  - `profile`: IRI if extended terms are used
+- **MAY**:
+  - `inheritFrom`: IRI of parent policies
+  - `conflict`: perm | prohibit | invalid (default: invalid)
+  - Shared props: action, assigner, assignee, target
+
+## Rule Object
+- **MUST**:
+  - `action`, `target` (for Permission/Prohibition), `duty` (if required), `remedy` (if required), `consequence` (if duty has it)
+- **SHOULD**:
+  - `uid`: IRI for the Rule
+- **MAY**:
+  - `constraint`, `assigner`, `assignee`, `remedy`, `consequence`
+
+## Action Object
+- **MUST**: Referenced via `action` in a Rule, if nested: must have `includedIn`
+- **SHOULD**: From ODRL Core or Profile
+- **MAY**: `refinement` with constraints
+
+## Asset / AssetCollection
+- **MUST**:
+  - Asset: used in `target`, be IRI or object with `uid`
+  - AssetCollection: use `source` instead of `uid`
+- **MAY**:
+  - Asset: `partOf` pointing to AssetCollection
+  - AssetCollection: `refinement` constraints
+
+## Party / PartyCollection
+- **MAY**:
+  - Party: assigner/assignee with `uid`
+  - PartyCollection: `source` and `refinement`
+
+## Constraints
+- **MUST**:
+  - Constraint: `leftOperand`, `operator`, and `rightOperand` or `rightOperandReference`
+  - LogicalConstraint: use `operand`: and | or | xone | andSequence with Constraint list
+
+## Duties and Remedies
+- **MAY**:
+  - Duties: attach to permission or policy, may have `consequence`
+  - Remedies: used in Prohibition as `remedy`
+- **MUST NOT**:
+  - Nest consequences inside a `consequence`
+
+## Conflict Resolution
+- `conflict` values:
+  - perm: permission wins
+  - prohibit: prohibition wins
+  - invalid: policy voided on conflict
+- **MUST**: One conflict value per policy unless merged
+
+## Policy Composition
+- **MAY**: Multiple `target`/`action`/`assignee` per Rule
+- **MUST**: Expand into atomic rules per combination
+
+## Inheritance
+- **MAY**: Inherit from other Policies
+- **MUST**:
+  - No circular inheritance
+  - Apply all inherited rules (except `status`)
+
+## Metadata
+- **MAY**:
+  - `dc:creator`, `dc:description`, `dc:issued`, `dc:modified`, `dc:coverage`, `dc:replaces`, `dc:isReplacedBy`
+- **SHOULD**:
+  - For traceability, versioning, readability
+
+## Validation Notes
+- **MUST**:
+  - Use atomic Rules unless compact form is needed
+  - All required fields must be present per type
+  - Constraints must have valid operand/operator/value
+  - Use profile-defined terms only
+
+Use this guidance to generate or validate ODRL policies to ensure SHACL compatibility and semantic correctness.

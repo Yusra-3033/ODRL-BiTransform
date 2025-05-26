@@ -1,19 +1,19 @@
-## config/config.yml
-## ------------------------------------------------------------------------------
-## ODRL Policy Generation Configuration
-##
-## This configuration file defines the parameters and default values used in
-## generating synthetic ODRL 2.2 policies. It includes:
-## - Number of policies to generate
-## - Default vocabularies (actions, constraints, operators)
-## - Example URIs for parties and assets
-## - Conflict resolution strategies
-## - Output destination
-##
-## This file supports consistent, repeatable, and configurable policy generation.
-## ------------------------------------------------------------------------------
-
 num_policies: 50  # Total number of synthetic ODRL policies to generate
+vocabulary:
+  action: ["read", "write", "stream", "share", "modify"]
+  leftOperand: ["elapsedTime", "purpose", "systemDevice"]
+  operator: ["isAnyOf", "isNoneOf", "greaterThan", "lessThan"]
+  duty: ["logUsage", "notifyAssigner", "reportToSystem"]
+  remedy: ["notifyAdmin", "escalateToLegal"]
+
+recommendations: |
+  Follow the W3C ODRL 2.2 specification when defining digital rights policies.
+
+ontology:
+  permission: Defines what actions are allowed.
+  prohibition: Defines what actions are disallowed.
+  obligation: Defines required actions (duties).
+>>>>>>> temp-llm-pipeline
 
 defaults:
   policy_types:    # Types of ODRL policies to randomly select from

@@ -1,0 +1,59 @@
+# prompts/odrl_generation_prompt.txt
+# ---------------------------------------------------------------------
+# Prompt Template for Generating ODRL Policies 
+# ---------------------------------------------------------------------
+
+You are an expert in semantic policy modeling and digital rights languages. Generate diverse and well-structured ODRL policies using the ODRL context and W3C vocabulary.
+
+ODRL Context URI:
+{context_uri}
+
+Ontology Definitions:
+{ontology}
+
+W3C Modeling Recommendations:
+{recommendations}
+
+Example Policies:
+{seed_examples}
+
+{complexity}
+
+---
+
+Instructions:
+- Generate {num} NEW ODRL policies in valid JSON-LD.
+- Each policy MUST include the following top-level fields:
+  - "@context": "http://www.w3.org/ns/odrl.jsonld"
+  - "@type": one of Set, Offer, Agreement, or Policy
+  - "uid": a unique IRI
+
+- Every policy MUST include at least one of these: "permission", "prohibition", or "obligation".
+- Each permission/prohibition/obligation rule MUST contain:
+  - "@type": "Permission", "Prohibition", or "Duty"
+  - "target": a valid IRI
+  - "action": a valid ODRL action term
+  - Optional: "assigner", "assignee", and "constraint"
+
+- If constraints are included, each constraint MUST contain:
+  - "leftOperand"
+  - "operator"
+  - "rightOperand"
+
+- Use ONLY valid ODRL terms from the provided vocabulary. Do NOT invent terms.
+
+- Avoid logically invalid or structurally incomplete policies:
+  - Do NOT leave out required fields
+  - Do NOT use both "greaterThan 5" AND "lessThan 3" on the same operand
+  - Do NOT use "eq 'X'" AND "isNoneOf ['X']" on the same operand
+
+- Ensure the policy conforms to SHACL structure and semantic rules.
+
+- Vary the following across policies:
+  - actions (e.g., read, write, use, copy, delete)
+  - constraint types (e.g., purpose, count, dateTime, systemDevice)
+  - constraint operators (e.g., lt, gt, eq, isAnyOf, isNoneOf)
+  - assignees and assigners
+  - target asset URIs
+
+Output ONLY the JSON-LD for each policy. No comments, no explanations, no markdown.
