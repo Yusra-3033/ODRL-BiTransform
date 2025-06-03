@@ -1,14 +1,26 @@
 # --- Core LLM Integration ---
-openai               
-python-dotenv        
+openai
+python-dotenv
 
 # --- Validation Tools ---
-jsonschema           
-pyshacl            
-rdflib             
-rdflib-jsonld        
+jsonschema
+pyshacl
+rdflib
+rdflib-jsonld
 
 # --- Configuration and Utility Tools ---
-pyyaml           
-requests            
-matplotlib          
+pyyaml
+requests
+matplotlib
+
+# --- HuggingFace & Fine-Tuning ---
+transformers
+datasets
+peft
+accelerate
+bitsandbytes
+torch
+
+# --- Evaluation ---
+rouge-score
+nltk
